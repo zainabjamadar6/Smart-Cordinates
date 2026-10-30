@@ -92,11 +92,34 @@ button{font:inherit;cursor:pointer}
 .fld input:focus,.fld select:focus{border-color:var(--b);box-shadow:0 0 0 4px rgba(36,95,168,.3)}
 .er{display:block;min-height:1.1em;color:#a3241c;font-size:.82rem;margin-top:4px}
 .sub-b{width:100%;margin-top:20px;padding:14px;border-radius:12px;box-shadow:var(--sh)}
+.bar{position:relative;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--card);border-bottom:2px solid var(--k)}
+.bar .back{margin:0;padding:6px 4px}
+.prof{position:relative}
+.pbtn{display:flex;align-items:center;gap:8px;background:var(--inp);border:2px solid var(--k);border-radius:99px;padding:3px 14px 3px 3px;box-shadow:3px 3px 0 var(--k);font-weight:700;color:var(--k)}
+.av{width:30px;height:30px;border-radius:50%;background:var(--g);color:#fff;border:2px solid var(--k);display:grid;place-items:center;font-family:"Space Grotesk",sans-serif;font-size:.95rem}
+.pn{max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.92rem}
+.pmenu{position:absolute;right:0;top:calc(100% + 10px);width:min(290px,88vw);background:var(--card);border:2px solid var(--k);border-radius:14px;padding:16px;box-shadow:var(--sh)}
+.pmenu h3{margin:0;font-size:1.1rem;word-break:break-word}
+.pmenu .em{color:var(--b);font-size:.85rem;word-break:break-all;margin-bottom:10px}
+.pmenu dl{margin:0 0 12px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.85rem}
+.pmenu dt{color:var(--mu);font-family:"JetBrains Mono",monospace;font-size:.72rem;text-transform:uppercase;padding-top:2px}.pmenu dd{margin:0;text-align:right}
+.out-b{width:100%;border:2px solid var(--k);background:var(--bg);color:var(--k);border-radius:10px;padding:8px;font-weight:700}
+.out-b:hover{background:var(--k);color:var(--bg)}
+textarea{width:100%;font:inherit;padding:11px 14px;border-radius:10px;border:2px solid var(--k);background:var(--inp);color:var(--tx);outline:0;resize:vertical}
+textarea:focus{border-color:var(--b);box-shadow:0 0 0 4px rgba(36,95,168,.3)}
+.rate{display:flex;gap:8px;margin:6px 0 4px}
+.rt{width:46px;height:46px;border:2px solid var(--k);border-radius:10px;background:var(--inp);font-weight:700;font-family:"JetBrains Mono",monospace;color:var(--k);transition:all .12s}
+.rt:hover{background:var(--hl)}.rt.on{background:var(--b);color:#fff;box-shadow:3px 3px 0 var(--k)}
+.ok{margin-top:14px;padding:12px 14px;border:2px solid var(--k);border-radius:10px;background:var(--hl);font-weight:500}
+.contact{background:var(--k);color:var(--bg);box-shadow:5px 5px 0 var(--g)}
+.contact .note{color:#cfe3d4}
+.contact a{display:inline-block;margin-top:6px;color:var(--bg);font-weight:700;font-family:"JetBrains Mono",monospace;font-size:1rem;word-break:break-all;border-bottom:2px solid var(--g2)}
+.contact a:hover{color:var(--g2)}
 @media (max-width:480px){.stats b{font-size:1.5rem}}
 </style></head><body>
 <section id="v-land">
 <header class="lh"><div class="wrap">
-<nav class="nav"><div class="brand"><img src="SMLogo.png" alt="Smart Coordinates logo" width="50" height="46" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.6" fill="var(--bg)"/>Smart Coordinates</div><button class="ghost go-form">Get started</button></nav>
+<nav class="nav"><div class="brand"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.6" fill="var(--bg)"/></svg>Smart Coordinates</div><button class="ghost go-form">Get started</button></nav>
 <div class="eyebrow">Neighbourhood intelligence</div>
 <h1 class="big">Smart Coordinates</h1>
 <p class="tagline">because where you live should feel safe, peaceful and right</p>
@@ -127,8 +150,8 @@ button{font:inherit;cursor:pointer}
 <button class="back" id="back">← Back</button>
 <div class="card fcard"><div class="brand"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.6" fill="var(--bg)"/></svg>Smart Coordinates</div>
 <h2>Tell us a little about you</h2>
-<p class="note">This takes less than a minute, and then you can check any neighbourhood. Your details stay in your browser and are not sent anywhere.</p>
-<div class="fld"><label for="fn">Full name</label><input id="fn" placeholder="e.g. Nayla Sokolova" autocomplete="name"><span class="er" id="e-n"></span></div>
+<p class="note">This takes less than a minute, and then you can check any neighbourhood. Your details are saved in this browser to create your account, and are not sent anywhere else.</p>
+<div class="fld"><label for="fn">Full name</label><input id="fn" placeholder="e.g.Nayla Sokolova" autocomplete="name"><span class="er" id="e-n"></span></div>
 <div class="fld"><label for="fg">Gender</label><select id="fg"><option value="">Select…</option><option>Female</option><option>Male</option><option>Non-binary</option><option>Prefer not to say</option></select><span class="er" id="e-g"></span></div>
 <div class="fld"><label for="fd">Date of birth</label><input id="fd" type="date" min="1900-01-01" autocomplete="bday"><span class="er" id="e-d"></span></div>
 <div class="fld"><label for="fe">Email</label><input id="fe" type="email" placeholder="you@example.com" autocomplete="email"><span class="er" id="e-e"></span></div>
@@ -136,6 +159,11 @@ button{font:inherit;cursor:pointer}
 </div></div></section>
  
 <div id="v-app" hidden>
+<div class="bar"><button class="back" id="back2">← Back</button>
+<div class="prof"><button class="pbtn" id="pbtn" aria-haspopup="true" aria-expanded="false" aria-label="Your profile"><span class="av" id="av">A</span><span class="pn" id="pn">You</span></button>
+<div class="pmenu" id="pmenu" hidden><h3 id="m-n"></h3><div class="em" id="m-e"></div>
+<dl><dt>Gender</dt><dd id="m-g"></dd><dt>Born</dt><dd id="m-d"></dd><dt>Joined</dt><dd id="m-j"></dd><dt>Searches</dt><dd id="m-s"></dd></dl>
+<button class="out-b" id="out-b">Sign out</button></div></div></div>
 <header class="hero"><div class="wrap">
 <div class="eyebrow" id="hi">Smart Coordinates · Pune</div>
 <h1>How safe is your neighbourhood?</h1>
@@ -148,8 +176,15 @@ button{font:inherit;cursor:pointer}
 </div>
 <div id="out"></div>
 <div class="card how"><h2>How the score works</h2>
-The Safety Score ranges from 0 to 100, with higher scores indicating more favourable crime-related conditions<b>A higher score suggests fewer recorded crime points, while a lower score indicates greater crime-related concerns based on the available data</b>, Use the score to compare different neighbourhoods and make more informed decisions about where to live.<br><br>
-<b>Please note:</b> Remember, the score is a guide, not a guarantee of safety.</div>
+Each incident is eorded and analyzed according to its severity the score is then analyzed using a formula, <b> kept between 0 and 100. Higher is safer.</b><br><br>
+<b>Please note:</b> The score given is an analysis based on past records and not a garuntee of safety. Use it as a guide only.</div>
+<div class="card" id="fb"><h2>Share your feedback</h2>
+<p class="note">How useful was this report?  1 = not useful, 5 = very useful</p>
+<div class="rate" id="rate"><button class="rt" data-r="1">1</button><button class="rt" data-r="2">2</button><button class="rt" data-r="3">3</button><button class="rt" data-r="4">4</button><button class="rt" data-r="5">5</button></div>
+<div class="fld"><label for="fm">Your feedback</label><textarea id="fm" rows="4" placeholder="Tell us what worked and what did not…"></textarea><span class="er" id="e-f"></span></div>
+<button class="sub-b" id="fsend">Send feedback</button>
+<div class="ok" id="fok" hidden>Thank you! Your feedback has been saved.</div></div>
+<div class="card contact"><h2>Contact us</h2><p class="note">Questions, corrections or ideas? Write to us and we will get back to you.</p><a id="cmail" href="#"></a></div>
 <datalist id="opts"></datalist>
 </main></div>
 <script>
@@ -173,7 +208,7 @@ document.getElementById("chips").innerHTML=chips(AREAS);
 document.addEventListener("click",e=>{const a=e.target.dataset&&e.target.dataset.a;if(a){q.value=a;run()}const h=e.target.dataset&&e.target.dataset.h;if(h)show(h,norm(q.value))});
 const band=s=>s>=70?["Lower risk","var(--g)"]:s>=50?["Moderate risk","var(--b)"]:["Higher risk","var(--k)"];
 const sev=w=>w>=8?"var(--k)":w>=4?"var(--b)":"var(--g2)";
-function show(area,match){
+function show(area,match){logSearch(area);
   const rows=DATA[area],{score:s}=score(rows,new Date()),[lab,col]=band(s);
   const cats={};rows.forEach(r=>cats[r.c]=(cats[r.c]||0)+1);
   const list=[...rows].sort((a,b)=>b.d.localeCompare(a.d)).map(r=>{
@@ -205,10 +240,9 @@ q.addEventListener("keydown",e=>{if(e.key==="Enter")run()});
 const $=id=>document.getElementById(id);
 $("s-a").textContent=AREAS.length;$("s-i").textContent=AREAS.reduce((n,a)=>n+DATA[a].length,0);
 function go(v){["land","form","app"].forEach(x=>$("v-"+x).hidden=x!==v);window.scrollTo(0,0)}
-document.querySelectorAll(".go-form").forEach(b=>b.onclick=()=>go("form"));
+document.querySelectorAll(".go-form").forEach(b=>b.onclick=()=>{const u=currentUser();u?openApp(u):go("form")});
 $("back").onclick=()=>go("land");
 $("fd").max=new Date().toISOString().slice(0,10);
-let user=null;
 function submitForm(){
   const n=$("fn").value.trim(),g=$("fg").value,d=$("fd").value,m=$("fe").value.trim(),e={};
   if(n.length<2)e.n="Please enter your name.";
@@ -218,11 +252,53 @@ function submitForm(){
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m))e.e="Please enter a valid email address.";
   ["n","g","d","e"].forEach(k=>$("e-"+k).textContent=e[k]||"");
   if(Object.keys(e).length)return;
-  user={name:n,gender:g,dob:d,email:m};
-  $("hi").textContent="Welcome, "+n.split(" ")[0]+" · Smart Coordinates";
-  go("app");
+  openApp(saveAccount(n,g,d,m));
 }
 $("sub").onclick=submitForm;
+const CONTACT_EMAIL="hello@smartcoordinates.in";
+const LS={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}};
+const getUsers=()=>LS.get("sc_users",{});
+let user=null;
+function currentUser(){const k=LS.get("sc_session",null);return k&&getUsers()[k]||null}
+function saveAccount(n,g,d,m){
+  const key=m.toLowerCase(),all=getUsers(),now=new Date().toISOString();
+  let u=all[key];
+  if(u)Object.assign(u,{name:n,gender:g,dob:d,lastLogin:now,visits:(u.visits||1)+1});
+  else u=all[key]={id:"u_"+Date.now().toString(36),name:n,gender:g,dob:d,email:m,createdAt:now,lastLogin:now,visits:1,searches:[]};
+  LS.set("sc_users",all);LS.set("sc_session",key);return u;
+}
+function logSearch(a){
+  if(!user)return;const all=getUsers(),u=all[user.email.toLowerCase()];if(!u)return;
+  u.searches=(u.searches||[]).concat({area:a,at:new Date().toISOString()}).slice(-100);
+  LS.set("sc_users",all);user=u;fillProfile();
+}
+function fillProfile(){
+  const u=user;
+  $("av").textContent=u.name.trim()[0].toUpperCase();$("pn").textContent=u.name.split(" ")[0];
+  $("m-n").textContent=u.name;$("m-e").textContent=u.email;$("m-g").textContent=u.gender;
+  $("m-d").textContent=fmt(u.dob);$("m-j").textContent=fmt(u.createdAt);$("m-s").textContent=(u.searches||[]).length;
+}
+function openApp(u){
+  user=u;fillProfile();
+  $("hi").textContent="Welcome, "+u.name.split(" ")[0]+" · Smart Coordinates";
+  out.innerHTML="";$("pmenu").hidden=true;go("app");
+}
+const cm=$("cmail");cm.textContent=CONTACT_EMAIL;cm.href="mailto:"+CONTACT_EMAIL;
+$("back2").onclick=()=>{$("pmenu").hidden=true;go("land")};
+$("pbtn").onclick=e=>{e.stopPropagation();const m=$("pmenu");m.hidden=!m.hidden;$("pbtn").setAttribute("aria-expanded",!m.hidden)};
+document.addEventListener("click",e=>{if(!e.target.closest(".prof"))$("pmenu").hidden=true});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$("pmenu").hidden=true});
+$("out-b").onclick=()=>{try{localStorage.removeItem("sc_session")}catch(e){}user=null;$("pmenu").hidden=true;go("land")};
+let rating=0;
+document.querySelectorAll(".rt").forEach(b=>b.onclick=()=>{rating=+b.dataset.r;document.querySelectorAll(".rt").forEach(x=>x.classList.toggle("on",+x.dataset.r===rating));$("e-f").textContent=""});
+$("fsend").onclick=()=>{
+  const msg=$("fm").value.trim();
+  if(!rating&&!msg){$("e-f").textContent="Please pick a rating or write a message.";return}
+  const all=LS.get("sc_feedback",[]);
+  all.push({id:"f_"+Date.now().toString(36),email:user?user.email:"",name:user?user.name:"",rating:rating||null,message:msg,at:new Date().toISOString()});
+  if(!LS.set("sc_feedback",all)){$("e-f").textContent="Could not save feedback in this browser.";return}
+  $("fm").value="";rating=0;document.querySelectorAll(".rt").forEach(x=>x.classList.remove("on"));
+  $("fok").hidden=false;setTimeout(()=>$("fok").hidden=true,5000);
+};
 ["fn","fd","fe"].forEach(i=>$(i).addEventListener("keydown",e=>{if(e.key==="Enter")submitForm()}));
 </script></body></html>
- 
