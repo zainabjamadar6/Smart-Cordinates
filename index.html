@@ -176,7 +176,7 @@ textarea:focus{border-color:var(--b);box-shadow:0 0 0 4px rgba(36,95,168,.3)}
 </div>
 <div id="out"></div>
 <div class="card how"><h2>How the score works</h2>
-Each incident is eorded and analyzed according to its severity the score is then analyzed using a formula, <b> kept between 0 and 100. Higher is safer.</b><br><br>
+Each incident is recorded and analyzed according to its severity the score is then analyzed using a formula, <b> kept between 0 and 100. Higher is safer.</b><br><br>
 <b>Please note:</b> The score given is an analysis based on past records and not a garuntee of safety. Use it as a guide only.</div>
 <div class="card" id="fb"><h2>Share your feedback</h2>
 <p class="note">How useful was this report?  1 = not useful, 5 = very useful</p>
@@ -255,7 +255,7 @@ function submitForm(){
   openApp(saveAccount(n,g,d,m));
 }
 $("sub").onclick=submitForm;
-const CONTACT_EMAIL="hello@smartcoordinates.in";
+const CONTACT_EMAIL="coordinatessmart@gmail.com";
 const LS={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}};
 const getUsers=()=>LS.get("sc_users",{});
 let user=null;
